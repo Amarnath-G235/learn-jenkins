@@ -5,7 +5,7 @@ pipeline {
     options {
         timeout(time: 10, unit: 'MINUTES')
         disableConcurrentBuilds()
-        // retry(1)
+        retry(1)
     }
     // parameters {
     //     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'echo This is Deploy'
-                //error 'pipeline failed'
+                error 'pipeline failed'
             }
         }
         // stage('Example') {
