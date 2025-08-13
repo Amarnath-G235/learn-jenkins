@@ -2,11 +2,11 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
-    // options {
-        // timeout(time: 10, unit: 'SECONDS')
+    options {
+        timeout(time: 10, unit: 'SECONDS')
         // disableConcurrentBuilds()
         // retry(1)
-    // }
+    }
     // parameters {
     //     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo This is Build'
-                //sh 'sleep 10'
+                sh 'sleep 10'
             }
         }
         stage('Test') {
